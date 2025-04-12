@@ -1,4 +1,4 @@
-const { addAssetsToJsonFile } = require('./utils');
+const { addAssetsToJsonFile } = require('./jEdit');
 
 
 let dataArrayName = "BodyMaterials";

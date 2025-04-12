@@ -155,17 +155,6 @@ function addAsset(data, asset, dataArrayName, importsClassName, getExportObject)
 
 function addMultipleAssets(json, assets, dataArrayName, importsClassName, getPushObject) {
     assets.forEach((asset) => addAsset(json, asset, dataArrayName, importsClassName, getPushObject));
-
-    // log new values
-    // last two NameMap values
-    console.log(json.NameMap.slice(-2));
-    // last two Imports values
-    console.log(json.Imports.slice(-2));
-    // last data array value
-    console.log(getDataArray(json, dataArrayName).Value.slice(-1));
-    // first Generations.NameCount value
-    console.log(json.Generations[0].NameCount);
-
     console.log("Assets added successfully!");
 }
 
@@ -183,8 +172,8 @@ function assetsFromFile(assetsFile) {
 /**
  * Add assets to a JSON file
  * @param {string} jsonFile The JSON file to update
- * @param {string[]} customAssets The assets to add like "Goat2/Content/Characters/Player/BabyGoat/Meshes/Oiiae/MI_Oiiae_Grey"
- * @param {boolean} clearData Set to true to clear the data array before adding new assets
+ * @param {string[]} customAssets The assets to add. A list with values like "Goat2/Content/Characters/Player/BabyGoat/Meshes/Oiiae/MI_Oiiae_Grey"
+ * @param {boolean} clearData Set to true to clear the data array before adding new assets.
  * @param {string} exportsArrayName The name of the target array in Exports to which assets will be added
  * @param {string} importsClassName The class name of the imports
  * @param {function} getExportObject A function that returns the object to push to the target data array in Exports. Takes an outerIndex.
@@ -215,6 +204,8 @@ function runCmd(cmd, args, callback) {
         if (callback) callback();
     });
 }
+
+
 
 module.exports = {
     addAsset,
