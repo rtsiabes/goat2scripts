@@ -14,9 +14,9 @@ Nodejs
 
 1. Locate the uasset to modify with FModel.
 2. Use UassetGUI to save it as JSON
-3. Configure a script and call addAssetsToJsonFile (or addAbilityToJsonFile) and run it.
+3. Run the required script. 
 
-Scripts starting with 'Add' come preconfigured, use those. For exmaple, AddFarmerStructures.js:
+AddFarmerStructures.js and AddAbility.js are the simplest scripts to use. Just set the required paths and run:
 
 ```javascript
 // AddFarmerStructures.js
