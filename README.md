@@ -21,29 +21,11 @@ Scripts starting with 'Add' come preconfigured, use those. For exmaple, AddFarme
 ```javascript
 // AddFarmerStructures.js
 
-var fs = require('fs');
-const { addAssetsToJsonFile } = require('./jEdit');
+const { write } = require("./FarmerStructures.js");
 
-// Main config
-// Set the path to the json file and the file with the farmer's structure list
-const jsonFile = String.raw`C:\my\UE_modding\FModel\Output\Exports\Goat2\Content\Blueprints\GoatGear\Abilities\BP_GA_Builder.json`;
-let assetsFile = String.raw`C:\my\UE_modding\scripts\uasset_json_mod\assetLists\farmer_structures_v3.txt`;
+const filePath = String.raw`C:\my\UE_modding\FModel\Output\Exports\Goat2\Content\Blueprints\GoatGear\Abilities\BP_GA_Builder.json`;
+let assetsFile = String.raw`C:\my\UE_modding\dev\goat2scripts\uasset_json_mod\assetLists\farmer_structures_v3.txt`;
 
-// Other configuration, this doesn't change.
-let dataArrayName = "Structures";
-let importsClassName = "StaticMesh";
+write(filePath, assetsFile);
 
-function getPushObject(outerIndex) {
-    return {
-        "$type": "UAssetAPI.PropertyTypes.Objects.ObjectPropertyData, UAssetAPI",
-        "Name": "0",
-        "DuplicationIndex": 0,
-        "IsZero": false,
-        "Value": outerIndex - 1, // Refers to the ObjectName in Imports
-    }
-}
-
-// Run
-let assets =  fs.readFileSync(assetsFile).toString().split("\n").map((line) => line.trim()).filter((line) => line.length > 0).filter(line => !line.startsWith('#'));
-addAssetsToJsonFile(jsonFile, assets, true, dataArrayName, importsClassName, getPushObject);
 ```
