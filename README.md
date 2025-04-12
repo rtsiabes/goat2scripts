@@ -29,3 +29,5 @@ let assetsFile = String.raw`C:\my\UE_modding\dev\goat2scripts\uasset_json_mod\as
 write(filePath, assetsFile);
 
 ```
+
+Run in cmd with `node AddFarmerStructures.js`, or install the Code Runner plugin in vscode.
