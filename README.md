@@ -25,7 +25,7 @@ var fs = require('fs');
 const { addAssetsToJsonFile } = require('./jEdit');
 
 // Main config
-// Set the path to the json file and thethe file with the farmer's structure list
+// Set the path to the json file and the file with the farmer's structure list
 const jsonFile = String.raw`C:\my\UE_modding\FModel\Output\Exports\Goat2\Content\Blueprints\GoatGear\Abilities\BP_GA_Builder.json`;
 let assetsFile = String.raw`C:\my\UE_modding\scripts\uasset_json_mod\assetLists\farmer_structures_v3.txt`;
 
